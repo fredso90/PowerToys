@@ -61,6 +61,7 @@ namespace Microsoft.PowerToys.Settings.UI.ViewModels
             _findMyMouseOverlayOpacity = FindMyMouseSettingsConfig.Properties.OverlayOpacity.Value;
             _findMyMouseSpotlightRadius = FindMyMouseSettingsConfig.Properties.SpotlightRadius.Value;
             _findMyMouseAnimationDurationMs = FindMyMouseSettingsConfig.Properties.AnimationDurationMs.Value;
+            _findMyMouseDurationMs = FindMyMouseSettingsConfig.Properties.DurationMs.Value;
             _findMyMouseSpotlightInitialZoom = FindMyMouseSettingsConfig.Properties.SpotlightInitialZoom.Value;
             _findMyMouseExcludedApps = FindMyMouseSettingsConfig.Properties.ExcludedApps.Value;
             _findMyMouseShakingMinimumDistance = FindMyMouseSettingsConfig.Properties.ShakingMinimumDistance.Value;
@@ -342,6 +343,24 @@ namespace Microsoft.PowerToys.Settings.UI.ViewModels
             set
             {
                 _isAnimationEnabledBySystem = value;
+            }
+        }
+
+        public int FindMyMouseDurationMs
+        {
+            get
+            {
+                return _findMyMouseDurationMs;
+            }
+
+            set
+            {
+                if (value != _findMyMouseDurationMs)
+                {
+                    _findMyMouseDurationMs = value;
+                    FindMyMouseSettingsConfig.Properties.DurationMs.Value = value;
+                    NotifyFindMyMousePropertyChanged();
+                }
             }
         }
 
@@ -955,6 +974,7 @@ namespace Microsoft.PowerToys.Settings.UI.ViewModels
         private string _findMyMouseSpotlightColor;
         private int _findMyMouseOverlayOpacity;
         private int _findMyMouseSpotlightRadius;
+        private int _findMyMouseDurationMs;
         private int _findMyMouseAnimationDurationMs;
         private int _findMyMouseSpotlightInitialZoom;
         private string _findMyMouseExcludedApps;

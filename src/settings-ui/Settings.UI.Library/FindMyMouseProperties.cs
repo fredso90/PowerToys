@@ -31,6 +31,9 @@ namespace Microsoft.PowerToys.Settings.UI.Library
         [JsonPropertyName("spotlight_radius")]
         public IntProperty SpotlightRadius { get; set; }
 
+        [JsonPropertyName("duration_ms")]
+        public IntProperty DurationMs { get; set; }
+
         [JsonPropertyName("animation_duration_ms")]
         public IntProperty AnimationDurationMs { get; set; }
 
@@ -52,6 +55,7 @@ namespace Microsoft.PowerToys.Settings.UI.Library
             SpotlightColor = new StringProperty("#FFFFFF");
             OverlayOpacity = new IntProperty(50);
             SpotlightRadius = new IntProperty(100);
+            DurationMs = new IntProperty(1000);
             AnimationDurationMs = new IntProperty(500);
             SpotlightInitialZoom = new IntProperty(9);
             ExcludedApps = new StringProperty();

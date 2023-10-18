@@ -104,6 +104,15 @@
                                     Minimum="1"
                                     Value="{x:Bind Mode=TwoWay, Path=ViewModel.FindMyMouseSpotlightInitialZoom}" />
                             </controls:SettingsCard>
+                            <controls:SettingsCard x:Uid="MouseUtils_FindMyMouse_DurationMs">
+                                <NumberBox
+                                    MinWidth="{StaticResource SettingActionControlMinWidth}"
+                                    LargeChange="1000"
+                                    Minimum="100"
+                                    SmallChange="100"
+                                    SpinButtonPlacementMode="Compact"
+                                    Value="{x:Bind Mode=TwoWay, Path=ViewModel.FindMyMouseDurationMs}" />
+                            </controls:SettingsCard>
                             <controls:SettingsCard x:Uid="MouseUtils_FindMyMouse_AnimationDurationMs">
                                 <NumberBox
                                     MinWidth="{StaticResource SettingActionControlMinWidth}"
